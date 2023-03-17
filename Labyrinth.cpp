@@ -5,4 +5,5 @@ bool isPathToFreedom(MazeCell* start, const std::string& moves) {
     (void) start;
     (void) moves;
     return false;
+    //Maybe use recursion since I can go back onto spaces I've been to already
 }
