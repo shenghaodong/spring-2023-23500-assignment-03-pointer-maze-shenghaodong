@@ -6,6 +6,11 @@ bool isPathToFreedom(MazeCell* start, const std::string& moves) {
     // (void) moves;
     // return false;
 
+
+    //Use a new pointer so I don't change starting location
+    MazeCell* myMaze = start;
+
+
     //Set the bool to true if you find the item in the maze
     bool spellBook = false;
     bool potion = false;
@@ -17,18 +22,32 @@ bool isPathToFreedom(MazeCell* start, const std::string& moves) {
     //In the if statement check if it leads to nullptr if it does then return false
     for(int i = 0; i < moves.length(); i++){
         if(moves.substr(i) =="N"){
-            start -> north; 
+            myMaze -> north; 
+            if(myMaze == nullptr){
+                return false;
+            }
         }
         if(moves.substr(i) =="E"){
-            start -> east; 
-            
+            myMaze -> east; 
+            if(myMaze == nullptr){
+                return false;
+            }
         }
         if(moves.substr(i) =="S"){
-            start -> south;
-            
+            myMaze -> south;
+            if(myMaze == nullptr){
+                return false;
+            }
         }
         if(moves.substr(i) =="W"){
-            start -> west;
+            myMaze -> west;
+            if(myMaze == nullptr){
+                return false;
+            }
         }
     }
+    if(spellBook == true && potion == true && wand == true){
+        return true;
+    }
+    return false;
 }
