@@ -1,4 +1,5 @@
 #include "Labyrinth.h"
+#include <iostream>
 
 bool isPathToFreedom(MazeCell* start, const std::string& moves) {
     /* TODO: Delete this comment and the remaining lines, then implement this function. */
@@ -21,63 +22,64 @@ bool isPathToFreedom(MazeCell* start, const std::string& moves) {
 
     //In the if statement check if it leads to nullptr if it does then return false
     for(int i = 0; i < moves.length(); i++){
-        if(moves.substr(i) =="N"){
-            myMaze -> north; 
+        if(moves.substr(i, 1) == "N"){
+            std::cout << "Testing:" << std::endl;
+            myMaze = myMaze -> north; 
             if(myMaze == nullptr){
                 return false;
             }
-            if(whatsHere == Item::SPELLBOOK){
+            if(myMaze -> whatsHere == Item::SPELLBOOK){
                 spellBook = true;
             }
-            if(whatsHere == Item::POTION){
+            if(myMaze -> whatsHere == Item::POTION){
                 potion = true;
             }
-            if(whatsHere == Item::WAND){
+            if(myMaze -> whatsHere == Item::WAND){
                 wand = true;
             }
         }
-        if(moves.substr(i) =="E"){
-            myMaze -> east; 
+        if(moves.substr(i, 1) == "E"){
+            myMaze = myMaze -> east; 
             if(myMaze == nullptr){
                 return false;
             }
-            if(whatsHere == Item::SPELLBOOK){
+            if(myMaze -> whatsHere == Item::SPELLBOOK){
                 spellBook = true;
             }
-            if(whatsHere == Item::POTION){
+            if(myMaze -> whatsHere == Item::POTION){
                 potion = true;
             }
-            if(whatsHere == Item::WAND){
+            if(myMaze -> whatsHere == Item::WAND){
                 wand = true;
             }
         }
-        if(moves.substr(i) =="S"){
-            myMaze -> south;
+        if(moves.substr(i, 1) == "S"){
+            myMaze = myMaze -> south;
             if(myMaze == nullptr){
                 return false;
             }
-            if(whatsHere == Item::SPELLBOOK){
+            if(myMaze -> whatsHere == Item::SPELLBOOK){
                 spellBook = true;
             }
-            if(whatsHere == Item::POTION){
+            if(myMaze -> whatsHere == Item::POTION){
                 potion = true;
             }
-            if(whatsHere == Item::WAND){
+            if(myMaze -> whatsHere == Item::WAND){
                 wand = true;
             }
         }
-        if(moves.substr(i) =="W"){
-            myMaze -> west;
+        if(moves.substr(i, 1) =="W"){
+            myMaze = myMaze -> west;
             if(myMaze == nullptr){
                 return false;
             }
-            if(whatsHere == Item::SPELLBOOK){
+            if(myMaze -> whatsHere == Item::SPELLBOOK){
                 spellBook = true;
             }
-            if(whatsHere == Item::POTION){
+            if(myMaze -> whatsHere == Item::POTION){
                 potion = true;
             }
-            if(whatsHere == Item::WAND){
+            if(myMaze -> whatsHere == Item::WAND){
                 wand = true;
             }
         }
