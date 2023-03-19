@@ -26,11 +26,29 @@ bool isPathToFreedom(MazeCell* start, const std::string& moves) {
             if(myMaze == nullptr){
                 return false;
             }
+            if(whatsHere == Item::SPELLBOOK){
+                spellBook = true;
+            }
+            if(whatsHere == Item::POTION){
+                potion = true;
+            }
+            if(whatsHere == Item::WAND){
+                wand = true;
+            }
         }
         if(moves.substr(i) =="E"){
             myMaze -> east; 
             if(myMaze == nullptr){
                 return false;
+            }
+            if(whatsHere == Item::SPELLBOOK){
+                spellBook = true;
+            }
+            if(whatsHere == Item::POTION){
+                potion = true;
+            }
+            if(whatsHere == Item::WAND){
+                wand = true;
             }
         }
         if(moves.substr(i) =="S"){
@@ -38,11 +56,29 @@ bool isPathToFreedom(MazeCell* start, const std::string& moves) {
             if(myMaze == nullptr){
                 return false;
             }
+            if(whatsHere == Item::SPELLBOOK){
+                spellBook = true;
+            }
+            if(whatsHere == Item::POTION){
+                potion = true;
+            }
+            if(whatsHere == Item::WAND){
+                wand = true;
+            }
         }
         if(moves.substr(i) =="W"){
             myMaze -> west;
             if(myMaze == nullptr){
                 return false;
+            }
+            if(whatsHere == Item::SPELLBOOK){
+                spellBook = true;
+            }
+            if(whatsHere == Item::POTION){
+                potion = true;
+            }
+            if(whatsHere == Item::WAND){
+                wand = true;
             }
         }
     }
