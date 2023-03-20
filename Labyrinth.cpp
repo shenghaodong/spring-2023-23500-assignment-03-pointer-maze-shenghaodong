@@ -23,7 +23,7 @@ bool isPathToFreedom(MazeCell* start, const std::string& moves) {
     //In the if statement check if it leads to nullptr if it does then return false
     for(int i = 0; i < moves.length(); i++){
         if(moves.substr(i, 1) == "N"){
-            myMaze = myMaze -> north; 
+            myMaze = myMaze -> north;
             if(myMaze == nullptr){
                 return false;
             }
